@@ -80,12 +80,14 @@
     <div id="script-content">
         <button class="round-button" id="script1-button">Nightmare Hub</button>
         <button class="round-button" id="script2-button">Sloth Hub</button>
+        <button class="round-button" id="script3-button">Universal Reach Script</button>
     </div>
 
     <script>
         const scriptsButton = document.getElementById('scripts-button');
         const script1Button = document.getElementById('script1-button');
         const script2Button = document.getElementById('script2-button');
+        const script3Button = document.getElementById('script3-button');
         const scriptContent = document.getElementById('script-content');
         const searchInput = document.getElementById('search-input');
 
@@ -103,6 +105,11 @@
 
         script2Button.addEventListener('click', () => {
             window.open('https://pstrw.github.io/raw/slothhub.lua', '_blank');
+        });
+
+
+       script3Button.addEventListener('click', () => {
+            window.open('https://pstrw.github.io/raw/universalreach.lua', '_blank');
         });
 
         
