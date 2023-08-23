@@ -82,54 +82,53 @@
         <button class="round-button" id="script5-button">Da Hood Bounty Farmer</button>
     </div>
 
-    <script>
-        const scriptsButton = document.getElementById('scripts-button');
-        const scriptContent = document.getElementById('script-content');
-        const searchInput = document.getElementById('search-input');
+   <script>
+    const scriptsButton = document.getElementById('scripts-button');
+    const scriptContent = document.getElementById('script-content');
+    const searchInput = document.getElementById('search-input');
 
+    scriptContent.style.display = 'block';
+
+    scriptsButton.addEventListener('click', () => {
         scriptContent.style.display = 'block';
+    });
 
-        scriptsButton.addEventListener('click', () => {
-            scriptContent.style.display = 'block';
+    script1Button.addEventListener('click', () => {
+        window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
+    });
+
+    script2Button.addEventListener('click', () => {
+        window.open('https://pstrw.github.io/raw/slothhub.lua', '_blank');
+    });
+
+    script3Button.addEventListener('click', () => {
+        window.open('https://pstrw.github.io/raw/universalreach.lua', '_blank');
+    });
+
+    script4Button.addEventListener('click', () => {
+        window.open('https://pstrw.github.io/raw/universalspeed.lua', '_blank');
+    });
+
+    script5Button.addEventListener('click', () => {
+        window.open('https://pstrw.github.io/raw/dahoodbountyfarm.lua', '_blank');
+    });
+
+    script6Button.addEventListener('click', () => {
+        window.open('https://pstrw.github.io/raw/stayalivekillbot.lua', '_blank');
+    });
+
+    searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const scriptButtons = document.querySelectorAll('.round-button');
+
+        scriptButtons.forEach((button) => {
+            const buttonText = button.textContent.toLowerCase();
+            if (buttonText.includes(searchTerm) && button !== scriptsButton) {
+                scriptContent.insertBefore(button, scriptContent.firstChild);
+            }
         });
+    });
+</script>
 
-         script1Button.addEventListener('click', () => {
-            
-            window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
-        });
-
-        script2Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/slothhub.lua', '_blank');
-        });
-
-
-       script3Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/universalreach.lua', '_blank');
-        });
-
-script4Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/universalspeed.lua', '_blank');
-        });
-
-script5Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/dahoodbountyfarm.lua', '_blank');
-        });
-
-script6Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/stayalivekillbot.lua', '_blank');
-        });
-
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const scriptButtons = document.querySelectorAll('.round-button');
-
-            scriptButtons.forEach((button) => {
-                const buttonText = button.textContent.toLowerCase();
-                if (buttonText.includes(searchTerm) && button !== scriptsButton) {
-                    scriptContent.insertBefore(button, scriptContent.firstChild);
-                }
-            });
-        });
-    </script>
 </body>
 </html>
