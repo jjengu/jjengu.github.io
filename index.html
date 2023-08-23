@@ -81,6 +81,7 @@
         <button class="round-button" id="script1-button">Nightmare Hub</button>
         <button class="round-button" id="script2-button">Sloth Hub</button>
         <button class="round-button" id="script3-button">Universal Reach Script</button>
+        <button class="round-button" id="script4-button">Universal Speed Script</button>
     </div>
 
     <script>
@@ -88,6 +89,7 @@
         const script1Button = document.getElementById('script1-button');
         const script2Button = document.getElementById('script2-button');
         const script3Button = document.getElementById('script3-button');
+        const script4Button = document.getElementById('script4-button');
         const scriptContent = document.getElementById('script-content');
         const searchInput = document.getElementById('search-input');
 
@@ -110,6 +112,10 @@
 
        script3Button.addEventListener('click', () => {
             window.open('https://pstrw.github.io/raw/universalreach.lua', '_blank');
+        });
+
+script4Button.addEventListener('click', () => {
+            window.open('https://pstrw.github.io/raw/universalspeed.lua', '_blank');
         });
 
         
