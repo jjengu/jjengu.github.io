@@ -59,24 +59,33 @@
     </div>
 
 <script>
-    const homeButton = document.getElementById('home-button');
-    const scriptsButton = document.getElementById('scripts-button');
-    const script1Button = document.getElementById('script1-button');
-    const scriptContent = document.getElementById('script-content');
+        const homeButton = document.getElementById('home-button');
+        const scriptsButton = document.getElementById('scripts-button');
+        const script1Button = document.getElementById('script1-button');
+        const homeContent = document.getElementById('home-content');
+        const scriptContent = document.getElementById('script-content');
 
-    homeButton.addEventListener('click', () => {
+        homeButton.addEventListener('click', () => {
+            homeContent.style.display = 'block';
+            scriptContent.style.display = 'none';
+        });
+
+        scriptsButton.addEventListener('click', () => {
+            homeContent.style.display = 'none';
+            scriptContent.style.display = 'block';
+        });
+
+        script1Button.addEventListener('click', () => {
+            // Open a new tab that redirects to YouTube
+            window.open('https://www.youtube.com', '_blank');
+        });
+
+        // Initially, show the "Home" content and hide the "Scripts" content
+        homeContent.style.display = 'block';
         scriptContent.style.display = 'none';
-    });
-
-    scriptsButton.addEventListener('click', () => {
-        scriptContent.style.display = 'block';
-    });
-
-    script1Button.addEventListener('click', () => {
-       
-        window.open('https://www.youtube.com', '_blank');
-    });
-</script>
+    </script>
+</body>
+</html>
 
 
 </body>
