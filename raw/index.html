@@ -1,82 +1,30 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Runner</title>
+    <title>slthss scripts</title>
     <style>
         body {
             background-color: #333;
             color: white;
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* This ensures the container takes up the full viewport height */
         }
 
-        #top-bar {
-            background-color: #222;
-            padding: 10px;
-        }
-
-        #button-container {
-            text-align: center;
-        }
-
-        .round-button {
-            background-color: #555;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .round-button:hover {
-            background-color: #777;
-        }
-
-        #script-content {
-            padding: 20px;
+        /* Style for the text */
+        .centered-text {
+            font-size: 36px; /* Adjust the font size as needed */
         }
     </style>
 </head>
 <body>
-    <div id="top-bar">
-        <div id="button-container">
-            <button class="round-button" id="scripts-button">Scripts</button>
-        </div>
+    <div class="centered-text">
+        <b>Why are you here 🤨🤨🤨?</b>
     </div>
-    
-    <div id="script-content">
-        <button class="round-button" id="script1-button">Nightmare Hub</button>
-        <button class="round-button" id="script2-button">Script 2</button>
-    </div>
-
-    <script>
-    const scriptsButton = document.getElementById('scripts-button');
-    const script1Button = document.getElementById('script1-button');
-    const script2Button = document.getElementById('script2-button');
-    const scriptContent = document.getElementById('script-content');
-
-    // Show the script content by default
-    scriptContent.style.display = 'block';
-
-    scriptsButton.addEventListener('click', () => {
-        scriptContent.style.display = 'block';
-    });
-
-    script1Button.addEventListener('click', () => {
-        // Open a new tab that redirects to YouTube
-        window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
-    });
-
-
-script2Button.addEventListener('click', () => {
-        // Open a new tab that redirects to YouTube
-        window.open('https://www.youtube.com', '_blank');
-    });
-</script>
-
 </body>
 </html>
