@@ -1,9 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Runner</title>
+    <title>slthss scripts</title>
     <style>
         body {
             background-color: #333;
@@ -15,10 +15,36 @@
         #top-bar {
             background-color: #222;
             padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #search-bar {
+            width: 20%;
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 38.85%;
+        }
+
+        #search-input {
+            width: 50%;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            height: 25px;
+            background-color: #555;
+            color: white;
+            outline: none;
         }
 
         #button-container {
-            text-align: center;
+            position: fixed;
+            top: 2.8%;
+            left: 45.2%;
+            transform: translate(-50%, -50%);
+            flex-grow: 5;
         }
 
         .round-button {
@@ -43,6 +69,9 @@
 </head>
 <body>
     <div id="top-bar">
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+        </div>
         <div id="button-container">
             <button class="round-button" id="scripts-button">Scripts</button>
         </div>
@@ -50,33 +79,46 @@
     
     <div id="script-content">
         <button class="round-button" id="script1-button">Nightmare Hub</button>
-        <button class="round-button" id="script2-button">Script 2</button>
+        <button class="round-button" id="script2-button">Sloth Hub</button>
     </div>
 
     <script>
-    const scriptsButton = document.getElementById('scripts-button');
-    const script1Button = document.getElementById('script1-button');
-    const script2Button = document.getElementById('script2-button');
-    const scriptContent = document.getElementById('script-content');
+        const scriptsButton = document.getElementById('scripts-button');
+        const script1Button = document.getElementById('script1-button');
+        const script2Button = document.getElementById('script2-button');
+        const scriptContent = document.getElementById('script-content');
+        const searchInput = document.getElementById('search-input');
 
-    // Show the script content by default
-    scriptContent.style.display = 'block';
-
-    scriptsButton.addEventListener('click', () => {
+        
         scriptContent.style.display = 'block';
-    });
 
-    script1Button.addEventListener('click', () => {
-        // Open a new tab that redirects to YouTube
-        window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
-    });
+        scriptsButton.addEventListener('click', () => {
+            scriptContent.style.display = 'block';
+        });
 
+        script1Button.addEventListener('click', () => {
+            
+            window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
+        });
 
-script2Button.addEventListener('click', () => {
-        // Open a new tab that redirects to YouTube
-        window.open('https://www.youtube.com', '_blank');
-    });
-</script>
+        script2Button.addEventListener('click', () => {
+            window.open('https://pstrw.github.io/raw/slothhub.lua', '_blank');
+        });
 
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const scriptButtons = document.querySelectorAll('.round-button');
+
+           
+            scriptButtons.forEach((button) => {
+                const buttonText = button.textContent.toLowerCase();
+                if (buttonText.includes(searchTerm) && button !== scriptsButton) {
+                    
+                    scriptContent.insertBefore(button, scriptContent.firstChild);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
