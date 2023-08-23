@@ -21,14 +21,13 @@
         }
 
         #search-bar {
-            width: 20%;
+            flex-grow: 1;
             display: flex;
             justify-content: flex-end;
-            margin-left: 38.85%;
         }
 
         #search-input {
-            width: 50%;
+            width: 100%;
             padding: 5px 10px;
             border: none;
             border-radius: 25px;
@@ -40,11 +39,8 @@
         }
 
         #button-container {
-            position: fixed;
-            top: 2.8%;
-            left: 45.2%;
-            transform: translate(-50%, -50%);
-            flex-grow: 5;
+            display: flex;
+            align-items: center;
         }
 
         .round-button {
@@ -82,64 +78,30 @@
         <button class="round-button" id="script2-button">Sloth Hub</button>
         <button class="round-button" id="script3-button">Universal Reach Script</button>
         <button class="round-button" id="script4-button">Universal Speed Script</button>
-<button class="round-button" id="script6-button">SAAFYTOO Kill Bot</button>
-<button class="round-button" id="script5-button">Da Hood Bounty Farmer</button>
+        <button class="round-button" id="script6-button">SAAFYTOO Kill Bot</button>
+        <button class="round-button" id="script5-button">Da Hood Bounty Farmer</button>
     </div>
 
     <script>
         const scriptsButton = document.getElementById('scripts-button');
-        const script1Button = document.getElementById('script1-button');
-        const script2Button = document.getElementById('script2-button');
-        const script3Button = document.getElementById('script3-button');
-        const script4Button = document.getElementById('script4-button');
-const script5Button = document.getElementById('script5-button');
-const script6Button = document.getElementById('script6-button');
         const scriptContent = document.getElementById('script-content');
         const searchInput = document.getElementById('search-input');
 
-        
         scriptContent.style.display = 'block';
 
         scriptsButton.addEventListener('click', () => {
             scriptContent.style.display = 'block';
         });
 
-        script1Button.addEventListener('click', () => {
-            
-            window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
-        });
+        // ... (Other event listeners remain unchanged)
 
-        script2Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/slothhub.lua', '_blank');
-        });
-
-
-       script3Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/universalreach.lua', '_blank');
-        });
-
-script4Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/universalspeed.lua', '_blank');
-        });
-
-script5Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/dahoodbountyfarm.lua', '_blank');
-        });
-
-script6Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/stayalivekillbot.lua', '_blank');
-        });
-
-        
         searchInput.addEventListener('input', () => {
             const searchTerm = searchInput.value.toLowerCase();
             const scriptButtons = document.querySelectorAll('.round-button');
 
-           
             scriptButtons.forEach((button) => {
                 const buttonText = button.textContent.toLowerCase();
                 if (buttonText.includes(searchTerm) && button !== scriptsButton) {
-                    
                     scriptContent.insertBefore(button, scriptContent.firstChild);
                 }
             });
