@@ -52,10 +52,39 @@
             margin: 10px;
             cursor: pointer;
             transition: background-color 0.3s;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .round-button:hover {
             background-color: #777;
+        }
+
+        .button-image {
+            width: 15px;
+            height: 15px;
+            margin-left: 10px;
+        }
+
+.button-description {
+            position: absolute;
+            top: 50%;
+            left: 105%; /* Adjust this value to move it more to the left */
+            background-color: #222;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            display: none;
+            white-space: nowrap;
+            overflow: hidden;
+            transform: translateY(-50%); /* Vertically center the description box */
+        }
+
+
+        .round-button:hover .button-description {
+            display: block;
         }
 
         #script-content {
@@ -74,13 +103,38 @@
     </div>
     
     <div id="script-content">
-        <button class="round-button" id="script1-button">Nightmare Hub</button>
-        <button class="round-button" id="script2-button">Sloth Hub</button>
-        <button class="round-button" id="script3-button">Universal Reach Script</button>
-        <button class="round-button" id="script4-button">Universal Speed Script</button>
-        <button class="round-button" id="script6-button">SAAFYTOO Kill Bot</button>
-        <button class="round-button" id="script5-button">Da Hood Bounty Farmer</button>
+        <button class="round-button" id="script1-button">
+            <div class="button-description">Multi-Gamed Sword Fighting Hub.</div>
+            Nightmare Hub
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
+        <button class="round-button" id="script2-button">
+            <div class="button-description">My First Multi-Game Hub.</div>
+            Sloth Hub
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png">
+        </button>
+        <button class="round-button" id="script3-button">
+            <div class="button-description">Self-Explanatory.</div>
+            Universal Reach Script
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
+        <button class="round-button" id="script4-button">
+            <div class="button-description">Self-Explanatory.</div>
+            Universal Speed Script
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
+        <button class="round-button" id="script5-button">
+            <div class="button-description">Self-Explanatory</div>
+            Da Hood Bounty Farmer
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
+        <button class="round-button" id="script6-button">
+            <div class="button-description">Automatically Kills People.</div>
+            SAAFYTOO Kill Bot
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
     </div>
+
 
     <script>
         const scriptsButton = document.getElementById('scripts-button');
