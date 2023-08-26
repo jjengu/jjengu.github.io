@@ -10,37 +10,11 @@
             color: white;
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-
-        #top-bar {
-            background-color: #222;
-            padding: 10px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-        }
-
-        #search-bar {
-            flex-grow: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        #search-input {
-            width: 100%;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            height: 25px;
-            background-color: #555;
-            color: white;
-            outline: none;
-        }
-
-        #button-container {
-            display: flex;
-            align-items: center;
+            justify-content: center;
+            height: 100vh; /* This ensures the content is centered vertically on the screen */
         }
 
         .round-button {
@@ -49,156 +23,55 @@
             border: none;
             border-radius: 25px;
             padding: 10px 20px;
-            margin: 10px;
             cursor: pointer;
             transition: background-color 0.3s;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-decoration: none; /* Remove underlines for links */
         }
 
         .round-button:hover {
             background-color: #777;
         }
 
-        .button-image {
-            width: 15px;
-            height: 15px;
-            margin-left: 10px;
-        }
-
-        .button-description {
-            position: absolute;
-            top: 50%;
-            left: 105%;
+        #top-bar {
             background-color: #222;
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-            display: none;
-            white-space: nowrap;
-            overflow: hidden;
-            transform: translateY(-50%);
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center;
         }
 
-        .round-button:hover .button-description {
-            display: block;
+        #content {
+            flex-grow: 1; /* Allows the content to grow and fill available space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        #script-content {
-            padding: 20px;
+        #payment-options {
+            margin-top: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
+    <!-- Top bar with "Go to YouTube" button -->
     <div id="top-bar">
-        <div id="search-bar">
-            <input type="text" id="search-input" placeholder="Search...">
-        </div>
-        <div id="button-container">
-            <button class="round-button" id="scripts-button">Scripts</button>
-        </div>
-    </div>
-    
-    <div id="script-content">
-        <button class="round-button" id="script1-button">
-            <div class="button-description">Multi-Gamed Sword Fighting Hub.</div>
-            Nightmare Hub
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
-        </button>
-        <button class="round-button" id="script2-button">
-            <div class="button-description">My First Multi-Game Hub.</div>
-            Sloth Hub
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png">
-        </button>
-        <button class="round-button" id="script3-button">
-            <div class="button-description">Self-Explanatory.</div>
-            Universal Reach Script
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
-        </button>
-        <button class="round-button" id="script4-button">
-            <div class="button-description">Self-Explanatory.</div>
-            Universal Speed Script
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
-        </button>
-        <button class="round-button" id="script5-button">
-            <div class="button-description">Self-Explanatory</div>
-            Da Hood Bounty Farmer
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
-        </button>
-        <button class="round-button" id="script6-button">
-            <div class="button-description">Automatically Kills People.</div>
-            SAAFYTOO Kill Bot
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
-        </button>
-        
-        <!-- New Button -->
-        <button class="round-button" id="script7-button">
-            <div class="button-description">Kinda Bad Just Tells You What Word To Use. (Long Words Only).</div>
-            Word Bomb Script
-            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
-        </button>
+        <a class="round-button" href="https://www.youtube.com" target="_blank">View My Free Scripts!</a>
     </div>
 
-    <script>
-        const scriptsButton = document.getElementById('scripts-button');
-        const scriptContent = document.getElementById('script-content');
-        const searchInput = document.getElementById('search-input');
-        const script1Button = document.getElementById('script1-button');
-        const script2Button = document.getElementById('script2-button');
-        const script3Button = document.getElementById('script3-button');
-        const script4Button = document.getElementById('script4-button');
-        const script5Button = document.getElementById('script5-button');
-        const script6Button = document.getElementById('script6-button');
-        const script7Button = document.getElementById('script7-button');
+    <!-- Content -->
+    <div id="content">
+        <!-- Button that redirects to example.org -->
+        <a class="round-button" href="https://example.org" target="_blank">Hire me!</a>
 
-        scriptContent.style.display = 'block';
-
-        scriptsButton.addEventListener('click', () => {
-            scriptContent.style.display = 'block';
-        });
-
-        script1Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/nightmare.lua', '_blank');
-        });
-
-        script2Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/slothhub.lua', '_blank');
-        });
-
-        script3Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/universalreach.lua', '_blank');
-        });
-
-        script4Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/universalspeed.lua', '_blank');
-        });
-
-        script5Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/dahoodbountyfarm.lua', '_blank');
-        });
-
-        script6Button.addEventListener('click', () => {
-            window.open('https://pstrw.github.io/raw/stayalivekillbot.lua', '_blank');
-        });
-
-        script7Button.addEventListener('click', () => {
-            // Replace the URL below with the URL for your new script
-            window.open('https://pstrw.github.io/raw/wordbomb.lua', '_blank');
-        });
-
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const scriptButtons = document.querySelectorAll('.round-button');
-
-            scriptButtons.forEach((button) => {
-                const buttonText = button.textContent.toLowerCase();
-                if (buttonText.includes(searchTerm) && button !== scriptsButton) {
-                    scriptContent.insertBefore(button, scriptContent.firstChild);
-                }
-            });
-        });
-    </script>
+       <div id="payment-options">
+            Tell me a luau script to make and i'll tell you if I can do it!
+        </div>
+        <div id="payment-options">
+            Payment Options: Robux and gift cards
+        </div>
+    </div>
 </body>
 </html>
