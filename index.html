@@ -68,10 +68,10 @@
             margin-left: 10px;
         }
 
-.button-description {
+        .button-description {
             position: absolute;
             top: 50%;
-            left: 105%; /* Adjust this value to move it more to the left */
+            left: 105%;
             background-color: #222;
             color: white;
             padding: 5px;
@@ -79,9 +79,8 @@
             display: none;
             white-space: nowrap;
             overflow: hidden;
-            transform: translateY(-50%); /* Vertically center the description box */
+            transform: translateY(-50%);
         }
-
 
         .round-button:hover .button-description {
             display: block;
@@ -133,13 +132,14 @@
             SAAFYTOO Kill Bot
             <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
         </button>
+        
+        <!-- New Button -->
         <button class="round-button" id="script7-button">
-            <div class="button-description">Kinda Bad It Just Tells You Words To Say.</div>
+            <div class="button-description">Kinda Bad Just Tells You What Word To Use. (Long Words Only).</div>
             Word Bomb Script
             <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
         </button>
     </div>
-
 
     <script>
         const scriptsButton = document.getElementById('scripts-button');
@@ -151,7 +151,7 @@
         const script4Button = document.getElementById('script4-button');
         const script5Button = document.getElementById('script5-button');
         const script6Button = document.getElementById('script6-button');
-        const script6Button = document.getElementById('script7-button');
+        const script7Button = document.getElementById('script7-button');
 
         scriptContent.style.display = 'block';
 
@@ -184,6 +184,7 @@
         });
 
         script7Button.addEventListener('click', () => {
+            // Replace the URL below with the URL for your new script
             window.open('https://pstrw.github.io/raw/wordbomb.lua', '_blank');
         });
 
