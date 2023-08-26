@@ -123,16 +123,29 @@
             Universal Speed Script
             <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
         </button>
+
+<button class="round-button" id="script6-button">
+            <div class="button-description">Kinda Bad It Just Gives You A Long Word To Type.</div>
+            Word Bomb Script
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
+
+        
+        
         <button class="round-button" id="script5-button">
             <div class="button-description">Self-Explanatory</div>
             Da Hood Bounty Farmer
             <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
         </button>
+        
         <button class="round-button" id="script6-button">
-            <div class="button-description">Automatically Kills People.</div>
+            <div class="button-description">Automatically Kills People In SAAFYTOO.</div>
             SAAFYTOO Kill Bot
             <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
         </button>
+
+        
+        
     </div>
 
 
@@ -146,6 +159,7 @@
         const script4Button = document.getElementById('script4-button');
         const script5Button = document.getElementById('script5-button');
         const script6Button = document.getElementById('script6-button');
+        const script7Button = document.getElementById('script7-button');
 
         scriptContent.style.display = 'block';
 
@@ -175,6 +189,10 @@
 
         script6Button.addEventListener('click', () => {
             window.open('https://pstrw.github.io/raw/stayalivekillbot.lua', '_blank');
+        });
+
+        script7Button.addEventListener('click', () => {
+            window.open('https://pstrw.github.io/raw/wordbomb.lua', '_blank');
         });
 
         searchInput.addEventListener('input', () => {
