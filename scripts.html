@@ -137,6 +137,14 @@
             Word Bomb Script
             <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
         </button>
+
+        <button class="round-button" id="script8-button">
+            <div class="button-description">Stares At Other Players. (Long Words Only).</div>
+            Stare Script
+            <img class="button-image" src="https://pstrw.github.io/raw/info2.png" alt="Image">
+        </button>
+
+        
     </div>
 
     <script>
@@ -151,6 +159,7 @@
         const script5Button = document.getElementById('script5-button');
         const script6Button = document.getElementById('script6-button');
         const script7Button = document.getElementById('script7-button');
+        const script8utton = document.getElementById('script8-button');
 
         scriptContent.style.display = 'block';
 
@@ -189,6 +198,11 @@
         script7Button.addEventListener('click', () => {
             // Replace the URL below with the URL for your new script
             window.open('https://pstrw.github.io/raw/wordbomb.lua', '_blank');
+        });
+
+        script8Button.addEventListener('click', () => {
+            // Replace the URL below with the URL for your new script
+            window.open('https://pstrw.github.io/raw/stare.lua', '_blank');
         });
 
         searchInput.addEventListener('input', () => {
