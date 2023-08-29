@@ -3,75 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>slthss scripts</title>
+    <title>Static Background</title>
     <style>
         body {
-            background-color: #333;
-            color: white;
             margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* This ensures the content is centered vertically on the screen */
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
         }
 
-        .round-button {
-            background-color: #555;
+        .static-dot {
+            position: absolute;
+            background-color: white;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: static 2s linear infinite;
+        }
+
+        .welcome-text {
+            position: absolute;
             color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none; /* Remove underlines for links */
+            font-size: 24px;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50px);
+            opacity: 0;
+            animation: welcome 2s ease-in-out 2s forwards;
         }
 
-        .round-button:hover {
-            background-color: #777;
+        .join-button {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: welcome 2s ease-in-out 4s forwards;
         }
 
-        #top-bar {
+        .join-button button {
             background-color: #222;
-            padding: 10px;
-            width: 100%;
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
-            align-items: center;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
         }
 
-        #content {
-            flex-grow: 1; /* Allows the content to grow and fill available space */
+        .join-button button:hover {
+            transform: scale(0.95);
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            height: 40%;
+            max-height: 300px;
+            background-color: #111;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 2;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        #payment-options {
-            margin-top: 20px;
-            font-size: 18px;
+        .container button {
+            background-color: #222;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .container button:hover {
+            transform: scale(0.95);
+        }
+
+        @keyframes static {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes welcome {
+            0% {
+                bottom: -30px;
+                opacity: 0;
+            }
+            100% {
+                bottom: 50%;
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Top bar with "Go to YouTube" button -->
-    <div id="top-bar">
-        <a class="round-button" href="https://pstrw.github.io/scripts.html" target="_blank">View My Free Scripts!</a>
-    </div>
+    <script>
+        function random(max) {
+            return Math.random() * max;
+        }
 
-    <!-- Content -->
-    <div id="content">
-        <!-- Button that redirects to example.org -->
-        <a class="round-button" href="https://discord.gg/pAMJGNsgk7" target="_blank">Hire me!</a>
+        function createDot() {
+            const dot = document.createElement('div');
+            dot.className = 'static-dot';
+            dot.style.top = random(window.innerHeight) + 'px';
+            dot.style.left = random(window.innerWidth) + 'px';
+            document.body.appendChild(dot);
+            setTimeout(() => {
+                document.body.removeChild(dot);
+            }, 2000);
+        }
 
-       <div id="payment-options">
-            Tell me a luau script to make and i'll tell you if I can do it!
-        </div>
-        <div id="payment-options">
-            Payment Options: Robux and gift cards
-        </div>
-    </div>
+        
+
+        function createWelcomeText() {
+            const welcomeText = document.createElement('div');
+            welcomeText.className = 'welcome-text';
+            welcomeText.textContent = 'Welcome';
+            document.body.appendChild(welcomeText);
+        }
+
+        function createJoinButton() {
+            const joinButton = document.createElement('div');
+            joinButton.className = 'join-button';
+            joinButton.innerHTML = '<button onclick="showBox()">Get scripts</button>';
+            document.body.appendChild(joinButton);
+        }
+
+        function showBox() {
+            const container = document.createElement('div');
+            container.className = 'container';
+            container.innerHTML = '<button onclick="redirectToExample()">Join discord</button>';
+            document.body.appendChild(container);
+            setTimeout(() => {
+                container.style.opacity = 1;
+            }, 10);
+        }
+
+        function redirectToExample() {
+            window.location.href = 'http://example.org';
+        }
+
+
+        setInterval(createDot, 100);
+        setTimeout(createWelcomeText, 900);
+        setTimeout(createJoinButton, 1350);
+    </script>
 </body>
 </html>
