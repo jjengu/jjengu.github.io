@@ -53,8 +53,10 @@
             transition: transform 0.2s ease-in-out;
         }
 
-        .join-button button:hover {
-            transform: scale(0.95);
+        /* Both buttons reduce size on hover */
+        .join-button button:hover,
+        .container button:hover {
+            transform: scale(0.9);
         }
 
         .container {
@@ -86,10 +88,6 @@
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.2s ease-in-out;
-        }
-
-        .container button:hover {
-            transform: scale(0.95);
         }
 
         @keyframes static {
@@ -130,8 +128,6 @@
             }, 2000);
         }
 
-        
-
         function createWelcomeText() {
             const welcomeText = document.createElement('div');
             welcomeText.className = 'welcome-text';
@@ -160,10 +156,9 @@
             window.location.href = 'https://discord.gg/bzadV4Kxpd';
         }
 
-
-        setInterval(createDot, 55);
-        setTimeout(createWelcomeText, 900);
-        setTimeout(createJoinButton, 1300);
+        setInterval(createDot, 20);
+        setTimeout(createWelcomeText, 80);
+        setTimeout(createJoinButton, 85);
     </script>
 </body>
 </html>
