@@ -22,90 +22,11 @@
             animation: static 2s linear infinite;
         }
 
-        .welcome-text {
-            position: absolute;
-            color: white;
-            font-size: 24px;
-            bottom: 0px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50px);
-            opacity: 0;
-            animation: welcome 2s ease-in-out 2s forwards;
-        }
-
-        .join-button {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            animation: welcome 2s ease-in-out 4s forwards;
-        }
-
-        .join-button button {
-            background-color: #222;
-            color: white;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        /* Both buttons reduce size on hover */
-        .join-button button:hover,
-        .container button:hover {
-            transform: scale(0.95);
-        }
-
-        .container {
-            width: 80%;
-            max-width: 400px;
-            height: 40%;
-            max-height: 300px;
-            background-color: #111;
-            border-radius: 10px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .container button {
-            background-color: #222;
-            color: white;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
         @keyframes static {
             0%, 100% {
                 opacity: 0;
             }
             50% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes welcome {
-            0% {
-                bottom: -30px;
-                opacity: 0;
-            }
-            100% {
-                bottom: 50%;
                 opacity: 1;
             }
         }
@@ -128,37 +49,7 @@
             }, 2000);
         }
 
-        function createWelcomeText() {
-            const welcomeText = document.createElement('div');
-            welcomeText.className = 'welcome-text';
-            welcomeText.textContent = 'Welcome';
-            document.body.appendChild(welcomeText);
-        }
-
-        function createJoinButton() {
-            const joinButton = document.createElement('div');
-            joinButton.className = 'join-button';
-            joinButton.innerHTML = '<button onclick="showBox()">Get scripts</button>';
-            document.body.appendChild(joinButton);
-        }
-
-        function showBox() {
-            const container = document.createElement('div');
-            container.className = 'container';
-            container.innerHTML = '<button onclick="redirectToExample()">Join discord</button>';
-            document.body.appendChild(container);
-            setTimeout(() => {
-                container.style.opacity = 1;
-            }, 10);
-        }
-
-        function redirectToExample() {
-            window.location.href = 'https://discord.gg/bzadV4Kxpd';
-        }
-
         setInterval(createDot, 30);
-        setTimeout(createWelcomeText, 80);
-        setTimeout(createJoinButton, 85);
     </script>
 </body>
 </html>
