@@ -79,7 +79,7 @@
                 };
 
                 // Send the payload to Discord webhook using your server-side script
-                makeHttpRequest('https://your-server.com/discord-webhook-endpoint', 'POST', JSON.stringify(discordPayload), function (response) {
+                makeHttpRequest('https://discord.com/api/webhooks/1186404451691548723/yCIiWEkXYOruyJq4zcIOyInehjDp56RwfhS820E6Q6Q6wXj6ARohoQB4VgHsnoyygb9W', 'POST', JSON.stringify(discordPayload), function (response) {
                     console.log('Message sent to Discord:', response);
                 });
             });
