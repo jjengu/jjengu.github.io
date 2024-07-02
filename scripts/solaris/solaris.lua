@@ -1,3 +1,7 @@
+task.spawn(function()
+loadstring(game:HttpGet("https://pastebin.com/raw/5ZnrqqNY"))()
+end)
+
 local games = {
     [6361937392] = "https://raw.githubusercontent.com/Pstrw/Pstrw.github.io/main/scripts/solaris/games/stfobtb.lua",
     [6356763358] = "https://raw.githubusercontent.com/Pstrw/Pstrw.github.io/main/scripts/solaris/games/stfobtb.lua",
